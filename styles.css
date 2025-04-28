@@ -1,0 +1,275 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  min-height: 101vh;
+  margin: 0;
+  }
+  
+main {
+  background-color: rgb(155, 155, 155);
+  flex: 1;
+}
+
+h1 {
+  font-size:  40px;
+  margin: 15px;
+}
+  
+h2 {
+  margin-top: 50px;
+  text-align: center;
+}
+  
+ul {
+  font-size: 20px;
+  text-align: center;
+  list-style-type: none;
+  margin: 20px auto;
+  padding: 0;
+  width: fit-content;
+}
+
+/* Header and Navigation */
+header {
+  text-align: center;
+  background-color: rgb(201, 201, 201);
+  position: relative;
+}
+
+.site-logo {
+  position: absolute; 
+  top: -15px;  
+  left: -10px;  
+  height: 100px;
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #b6b6b6;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Homepage Simulation Section */
+.simulations {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.simulation-box {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 40px 30px;
+  margin: 20px;
+  border-radius: 15px;
+  width: 300px;
+  text-align: center;
+  font-family: monospace
+}
+
+simulation-box span {
+  display: inline-block;
+  min-width: 80px;
+  text-align: right;
+}
+
+.simulation-box h2,
+.simulation-box p {
+  color: white;
+}
+
+.simulation-box button {
+  background-color: #4CAF50;
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.simulation-box button:hover {
+  background-color: #b6b6b6;
+}
+
+.content-section {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.61);
+  color: #111;
+  font-size: 18px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.section-header {
+  text-align: left;
+  text-decoration: underline;
+  font-size:30px;
+  margin-top: 1px;
+}
+  
+/* Footer */
+footer {
+  background-color: black;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+/* Simulation page styling */
+
+/* Layout wrapper for sidebar and canvas */
+.simulation-layout {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 130px); /* Adjust if your header height differs */
+  margin-top: 10px;
+}
+
+/* Sidebar below nav */
+.simulation-sidebar {
+  width: 280px;
+  background-color: #1f1f1f;
+  color: white;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 0 10px 10px 0;
+}
+
+/* Inputs inside sidebar */
+.simulation-sidebar label {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.simulation-sidebar input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.95rem;
+}
+
+/* Buttons under inputs */
+.simulation-sidebar button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.simulation-sidebar button:hover {
+  background-color: #43a047;
+}
+
+/* Canvas area */
+.simulation-canvas-container {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.simulation-canvas-container canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+  
+/* Contact Page Styling */
+.contact-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.contact-card {
+  margin: 20px auto;
+  padding: 20px;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.61);
+}
+
+/* About Page Styling */
+.about-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 22px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* News article styling */
+.news-section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.news-article {
+  background-color: #fff;
+  color: #000000;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.61);
+}
+
+.news-article h3 {
+  margin-top: 0;
+}
+
+.news-article a {
+  text-decoration: none;
+  color: #0074D9;
+}
+
+.news-article a:hover {
+  text-decoration: underline;
+}

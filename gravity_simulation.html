@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Gravity Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <h1> Exploring The Universe Through Interactive Simulations </h1>
+      <div class="topnav">
+        <a class="active" href="Homepage.html">Simulation</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="login.html" style="float:right">Login</a>
+        <img src="Logo.png" alt="Logo" class="site-logo">
+      </div>
+    </header>
+    <div id="controls">
+
+      <div class="simulation-layout">
+        <div class="simulation-sidebar">
+          <h3>Gravity Simulation</h3>
+      
+          <strong>Body 1</strong>
+          <label>X:</label><input id="x1" type="number">
+          <label>Y:</label><input id="y1" type="number">
+          <label>VX:</label><input id="vx1" type="number" value="0">
+          <label>VY:</label><input id="vy1" type="number" value="-0.5">
+          <label>Mass:</label><input id="m1" type="number" value="10000">
+      
+          <strong>Body 2</strong>
+          <label>X:</label><input id="x2" type="number">
+          <label>Y:</label><input id="y2" type="number">
+          <label>VX:</label><input id="vx2" type="number" value="0">
+          <label>VY:</label><input id="vy2" type="number" value="0.5">
+          <label>Mass:</label><input id="m2" type="number" value="5000">
+      
+          <button onclick="startSimulation()">Start Simulation</button>
+          <button onclick="stopSimulation()">Stop Simulation</button>
+          <button onclick="resetSimulation()">Reset</button>
+          <button onclick="saveToLocal()">Save Locally</button>
+          <button onclick="loadFromLocal()">Load Saved</button>
+        </div>
+      
+        <div class="simulation-canvas-container">
+          <canvas id="spaceCanvas"></canvas>
+        </div>
+      </div>
+
+    <canvas id="spaceCanvas"></canvas>
+
+    <script src="script.js"></script>
+  </body>
+</html>

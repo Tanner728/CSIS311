@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>News - Physics Experiment</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>Latest Physics and Space News</h1>
+      <img src="Logo.png" alt="Logo" class="site-logo">
+      <div class="topnav">
+        <a href="Homepage.html">Simulation</a>
+        <a class="active" href="#news">News</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="login.html" style="float:right">Login</a>
+      </div>
+    </header>
+
+    <main>
+      <h2>News</h2>
+      <section class="news-section">
+        <div id="news-list">Loading...</div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Copyright Group 3 2025©</p>
+    </footer>
+
+    <script>
+      async function loadNews() {
+        const url = `https://gnews.io/api/v4/top-headlines?token=c575ecc24d59927258387b17703566f0&lang=en&topic=science&page=1&country=us`;
+    
+        try {
+          const response = await fetch(url);
+          const data = await response.json();
+          const newsList = document.getElementById('news-list');
+          newsList.innerHTML = '';
+          
+          if (data.articles && data.articles.length > 0) {
+            data.articles.forEach(article => {
+              const articleDiv = document.createElement('div');
+              articleDiv.className = 'news-article';
+              articleDiv.innerHTML = `
+                <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
+                <p>${article.description || ''}</p>
+              `;
+              newsList.appendChild(articleDiv);
+            });
+          } else {
+            newsList.innerHTML = '<div class="news-article">No articles available right now.</div>';
+          }
+        } catch (err) {
+          console.error('Error fetching news:', err);
+          newsList.innerHTML = '<div class="news-article">Failed to load news.</div>';
+        }
+      }
+    
+      loadNews();
+      setInterval(loadNews, 5 * 60 * 1000);
+    </script>
+  </body>
+</html>
