@@ -52,44 +52,6 @@ function applyGravity(body1, body2) {
   body2.vel[1] -= (fy / body2.mass);
 }
 
-function drawCenterOfMass() {
-  let totalMass = 0;
-  let comX = 0;
-  let comY = 0;
-
-  for (const body of bodies) {
-    totalMass += body.mass;
-    comX += body.pos[0] * body.mass;
-    comY += body.pos[1] * body.mass;
-  }
-
-  if (totalMass === 0) return;
-
-  comX /= totalMass;
-  comY /= totalMass;
-
-  // Draw the crosshair
-  ctx.beginPath();
-  ctx.arc(comX, comY, 5, 0, 2 * Math.PI);
-  ctx.fillStyle = "white";
-  ctx.fill();
-  ctx.closePath();
-
-  ctx.beginPath();
-  ctx.moveTo(comX - 10, comY);
-  ctx.lineTo(comX + 10, comY);
-  ctx.moveTo(comX, comY - 10);
-  ctx.lineTo(comX, comY + 10);
-  ctx.strokeStyle = "white";
-  ctx.stroke();
-  ctx.closePath();
-
-  // Draw the label
-  ctx.font = "16px sans-serif";
-  ctx.fillStyle = "white";
-  ctx.fillText("Center of Mass", comX + 12, comY - 12);
-}
-
 function updateSimulation() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -148,6 +110,31 @@ function resetSimulation() {
 
 // Initialize default positions to center of screen
 resetSimulation();
+
+//if logged in you can see the save and load buttons, otherwise you cant
+window.addEventListener('DOMContentLoaded', () => {
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  const logoutBtn = document.getElementById('logoutBtn');
+  const saveBtn = document.getElementById('saveBtn'); 
+  const loadBtn = document.getElementById('loadBtn');
+
+  if (isLoggedIn === 'true') {
+    logoutBtn.style.display = 'block';
+    if (saveBtn) saveBtn.style.display = 'inline-block';
+    if (loadBtn) loadBtn.style.display = 'inline-block';
+  } else {
+    logoutBtn.style.display = 'none';
+    if (saveBtn) saveBtn.style.display = 'none';
+    if (loadBtn) loadBtn.style.display = 'none';
+  }
+
+  logoutBtn.addEventListener('click', () => {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('username');
+    window.location.href = 'index.html';
+  });
+});
+
 
 //save settings to a run locally
 function saveToLocal() {

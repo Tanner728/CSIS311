@@ -91,11 +91,10 @@
       const password = document.getElementById('password').value;
       const errorMsg = document.getElementById('error-msg');
 
-      // You can replace this with more secure authentication logic
       if (username === 'admin' && password === 'password123') {
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('username', username);
-        window.location.href = 'gravity_simulation.html'; // Replace with your secure page
+        window.location.href = 'gravity_simulation.html'; 
       } else {
         errorMsg.style.display = 'block';
       }
