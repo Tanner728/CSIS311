@@ -9,12 +9,13 @@
     <header>
       <h1> Exploring The Universe Through Interactive Simulations </h1>
       <div class="topnav">
-        <a class="active" href="Homepage.html">Simulation</a>
+        <a class="active" href="index.html">Simulation</a>
         <a href="news.html">News</a>
         <a href="contact.html">Contact</a>
         <a href="about.html">About</a>
         <a href="login.html" style="float:right">Login</a>
         <img src="Logo.png" alt="Logo" class="site-logo">
+        
       </div>
     </header>
     <div id="controls">
@@ -40,8 +41,9 @@
           <button onclick="startSimulation()">Start Simulation</button>
           <button onclick="stopSimulation()">Stop Simulation</button>
           <button onclick="resetSimulation()">Reset</button>
-          <button onclick="saveToLocal()">Save Locally</button>
-          <button onclick="loadFromLocal()">Load Saved</button>
+          <button id="saveBtn" onclick="saveToLocal()">Save Locally</button>
+          <button id="loadBtn" onclick="loadFromLocal()">Load Saved</button>
+
         </div>
       
         <div class="simulation-canvas-container">
