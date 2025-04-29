@@ -103,6 +103,7 @@ function updateSimulation() {
   for (const body of bodies) {
     body.updatePosition();
     body.draw();
+    drawCenterOfMass();
   }
 
   animationId = requestAnimationFrame(updateSimulation);
